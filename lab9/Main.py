@@ -5,6 +5,9 @@ from random import randrange
 from tabulate import tabulate
 import matplotlib.pyplot as plt
 
+without_pivoting_list = []
+with_pivoting_list = []
+matrix_size_list = []
 
 def gauss(A, B):
     n = len(A)
@@ -87,23 +90,20 @@ def write_diagram(values, sizes, title):
     plt.legend()
     plt.savefig(title)
 
-if __name__ == '__main__':
-    without_pivoting_list = []
-    with_pivoting_list = []
-    matrix_size_list = []
+def write_to_file():
+    fd = open("test_results.txt", "w+")
+    fd.write("With pivoting \t Without pivoting \t Matrix size\n")
+    for i in range(500):
+        fd.write(f"{matrix_size_list[i]} \t\t {with_pivoting_list[i]} \t {without_pivoting_list[i]}\n")
+    fd.close()
 
+if __name__ == '__main__':
     for i in range(500):
         without_pivot, with_pivot, n = test()
         without_pivoting_list.append(with_pivot)
         with_pivoting_list.append(with_pivot)
         matrix_size_list.append(n)
 
-    fd = open("dane.txt", "w+")
-    fd.write("With pivoting \t Without pivoting \t Matrix size\n")
-    for i in range(500):
-        fd.write(f"{matrix_size_list[i]} \t\t {with_pivoting_list[i]} \t {without_pivoting_list[i]}\n")
-    fd.close()
-
+    write_to_file()
     write_diagram(without_pivoting_list, matrix_size_list, "without pivoting")
     write_diagram(with_pivoting_list, matrix_size_list, "with pivoting")
-
