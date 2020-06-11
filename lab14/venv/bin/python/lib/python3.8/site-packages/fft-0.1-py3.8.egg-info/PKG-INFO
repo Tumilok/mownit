@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: fft
+Version: 0.1
+Summary: FFT: Teaching functional programming with a funds transfer example
+Home-page: https://github.com/cmdimkpa/fft/archive/v0.1.tar.gz
+Author: Monty Dimkpa
+Author-email: cmdimkpa@gmail.com
+License: UNKNOWN
+Description: # functional-funds-transfer
+        Teaching Functional Programming with a funds transfer problem
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
